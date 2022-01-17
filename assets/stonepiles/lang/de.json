@@ -1,0 +1,15 @@
+﻿{
+    "block-stonepile": "Steinhaufen",
+
+    "blockhelp-stonepile-addstone": "Steine hinzufügen",
+    "blockhelp-stonepile-removestone": "Steine entfernen",
+
+    "blockhelp-stonepile-add": "Hinzufügen",
+    "blockhelp-stonepile-remove": "Entfernen",
+
+    "blockhelp-quartzpile-addstone": "Quartz hinzufügen",
+    "blockhelp-quartzpile-removestone": "Quartz entfernen",
+
+    "blockhelp-claypile-addclay": "Lehm hinzufügen",
+    "blockhelp-claypile-removeclay": "Lehm entfernen"
+}

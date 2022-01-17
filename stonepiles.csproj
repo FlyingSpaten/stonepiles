@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74F96C28-1D00-48F2-9300-41865FDC123C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>stonepiles</RootNamespace>
+    <AssemblyName>stonepiles</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\stonepiles\</OutputPath>
+    <IntermediateOutputPath>..\..\obj\Debug\stonepiles\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\stonepiles\</OutputPath>
+    <IntermediateOutputPath>..\..\obj\Release\stonepiles\</IntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(AppData)\Vintagestory\VintagestoryAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSSurvivalMod">
+      <HintPath>$(AppData)\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSEssentials">
+      <HintPath>$(AppData)\Vintagestory\Mods\VSEssentials.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSCreativeMod">
+      <HintPath>$(AppData)\Vintagestory\Mods\VSCreativeMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(AppData)\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\stonepiles\textures\block\clay\blueclay.png" />
+    <Content Include="assets\stonepiles\textures\block\clay\fireclay.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-andesite1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-andesite2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-andesite3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-andesite4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-basalt1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-basalt2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-basalt3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-basalt4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-bauxite1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-bauxite2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-bauxite3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-bauxite4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-chalk1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-chalk2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-chalk3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-chalk4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-chert1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-chert2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-chert3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-chert4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-claystone1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-claystone2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-claystone3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-claystone4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-conglomerate1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-conglomerate2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-conglomerate3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-conglomerate4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-granite.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-granite1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-granite2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-granite3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-granite4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-greenmarble1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-greenmarble2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-greenmarble3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-greenmarble4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-halite1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-halite2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-halite3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-halite4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-kimberlite1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-limestone1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-limestone2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-limestone3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-limestone4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-meteorite-iron1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-meteorite-iron2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-meteorite-iron3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-meteorite-iron4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-obsidian1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-peridotite1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-peridotite2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-peridotite3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-peridotite4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-phyllite1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-phyllite2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-phyllite3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-phyllite4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-redmarble1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-redmarble2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-redmarble3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-redmarble4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-sandstone1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-sandstone2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-sandstone3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-sandstone4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-scoria1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-scoria2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-scoria3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-scoria4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-shale1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-shale2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-shale3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-shale4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-slate1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-slate2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-slate3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-slate4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-suevite1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-suevite2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-sulfur1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-tuff1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-tuff2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-tuff3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-tuff4.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-whitemarble1.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-whitemarble2.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-whitemarble3.png" />
+    <Content Include="assets\stonepiles\textures\block\stonepile-whitemarble4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\stonepiles\recipes\grid\" />
+    <Folder Include="assets\stonepiles\textures\block\orepile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\stonepiles\blocktypes\claypile.json" />
+    <None Include="assets\stonepiles\blocktypes\orepile-ungraded.json" />
+    <None Include="assets\stonepiles\blocktypes\quartzpile.json" />
+    <None Include="assets\stonepiles\blocktypes\stonepile.json" />
+    <None Include="assets\stonepiles\lang\de.json" />
+    <None Include="assets\stonepiles\lang\en.json" />
+    <None Include="assets\stonepiles\patches\SetPilableClasses.json" />
+    <None Include="assets\stonepiles\textures\block\base-granite.pdn" />
+    <None Include="modinfo.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Base\BlockEntity\BlockEntityPile.cs" />
+    <Compile Include="src\Base\Block\BlockPile.cs" />
+    <Compile Include="src\Base\Item\ItemPilableUtil.cs" />
+    <Compile Include="src\BlockEntity\BlockEntityClayPile.cs" />
+    <Compile Include="src\BlockEntity\BlockEntityOreUngradedPile.cs" />
+    <Compile Include="src\BlockEntity\BlockEntityQuartzPile.cs" />
+    <Compile Include="src\BlockEntity\BlockEntityStonePile.cs" />
+    <Compile Include="src\Block\BlockClayPile.cs" />
+    <Compile Include="src\Block\BlockOreUngradedPile.cs" />
+    <Compile Include="src\Block\BlockQuartzPile.cs" />
+    <Compile Include="src\Block\BlockStonePile.cs" />
+    <Compile Include="src\Item\ItemPilableClay.cs" />
+    <Compile Include="src\Item\ItemPilableOre.cs" />
+    <Compile Include="src\Item\ItemPilableQuartz.cs" />
+    <Compile Include="src\Item\ItemPilableStone.cs" />
+    <Compile Include="src\StonePileMod.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
