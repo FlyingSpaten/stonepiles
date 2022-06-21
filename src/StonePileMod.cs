@@ -1,4 +1,5 @@
-﻿using nrw.frese.stonepile.block;
+﻿using nrw.frese.stonepile.behavior;
+using nrw.frese.stonepile.block;
 using nrw.frese.stonepile.blockentity;
 using nrw.frese.stonepile.item;
 using Vintagestory.API.Common;
@@ -24,6 +25,9 @@ namespace nrw.frese.stonepile
             api.RegisterItemClass("ItemPilableOre", typeof(ItemPilableOre));
             api.RegisterItemClass("ItemPilableQuartz", typeof(ItemPilableQuartz));
             api.RegisterItemClass("ItemPilableClay", typeof(ItemPilableClay));
+
+            api.RegisterCollectibleBehaviorClass("BehaviorPilableQuartz", typeof(BehaviorPilableQuartz));
+            api.RegisterCollectibleBehaviorClass("BehaviorPilableStone", typeof(BehaviorPilableStone));
         }
     }
 }

@@ -1,9 +1,9 @@
 ﻿[
     {
         "file": "game:itemtypes/resource/stone",
-        "op": "replace",
-        "path": "/class",
-        "value": "ItemPilableStone"
+        "op": "add",
+        "path": "/behaviors",
+        "value": [{"name": "BehaviorPilableStone"}]
     },
     {
         "file": "game:itemtypes/resource/ore-ungraded",

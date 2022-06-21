@@ -55,7 +55,7 @@ namespace nrw.frese.stonepile.basics
 
         public int Layers()
         {
-            return Math.Min(inventory[0].StackSize / (MaxStackSize / 8), 8);
+            return Math.Max(Math.Min(inventory[0].StackSize / (MaxStackSize / 8), 8), 1);
         }
 
         public void GetDecalMesh(ITexPositionSource decalTexSource, out MeshData meshdata)
@@ -181,7 +181,7 @@ namespace nrw.frese.stonepile.basics
                 {
                     if (Api.World is IServerWorldAccessor)
                     {
-                        Api.World.BlockAccessor.SetBlock((ushort)pileblock.Id, abovePos);
+                        Api.World.BlockAccessor.SetBlock(pileblock.Id, abovePos);
                         BlockEntityPile bep = Api.World.BlockAccessor.GetBlockEntity(abovePos) as BlockEntityPile;
                         if (bep != null) bep.TryPutItem(byPlayer);
                     }

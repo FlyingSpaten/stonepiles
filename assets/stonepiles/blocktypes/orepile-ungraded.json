@@ -21,7 +21,6 @@
         "break": "game:block/stone"
     },
     "replaceable": 100,
-    "renderPass": "Transparent",
     "resistance": 2,
     "collisionbox": {
         "x1": 0,

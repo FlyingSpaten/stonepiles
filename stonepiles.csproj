@@ -172,9 +172,12 @@
     <None Include="modinfo.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Base\Behavior\BehaviorItemPilable.cs" />
     <Compile Include="src\Base\BlockEntity\BlockEntityPile.cs" />
     <Compile Include="src\Base\Block\BlockPile.cs" />
     <Compile Include="src\Base\Item\ItemPilableUtil.cs" />
+    <Compile Include="src\Behavior\BehaviorPilableQuartz.cs" />
+    <Compile Include="src\Behavior\BehaviorPilableStone.cs" />
     <Compile Include="src\BlockEntity\BlockEntityClayPile.cs" />
     <Compile Include="src\BlockEntity\BlockEntityOreUngradedPile.cs" />
     <Compile Include="src\BlockEntity\BlockEntityQuartzPile.cs" />
