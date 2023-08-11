@@ -1,0 +1,47 @@
+﻿[
+    {
+        "file": "game:itemtypes/resource/stone",
+        "op": "add",
+        "path": "/behaviors",
+        "value": [{"name": "BehaviorPilableStone"}]
+    },
+    {
+        "file": "game:itemtypes/resource/ore-ungraded",
+        "op": "replace",
+        "path": "/classByType",
+        "value": {
+            "*-bituminouscoal": "ItemCoal",
+		    "*": "ItemPilableOre"
+        }
+    },
+    {
+        "file": "game:itemtypes/resource/quartz/amethyst",
+        "op": "add",
+        "path": "/class",
+        "value": "ItemPilableQuartz"
+    },
+    {
+        "file": "game:itemtypes/resource/quartz/clearquartz",
+        "op": "add",
+        "path": "/class",
+        "value": "ItemPilableQuartz"
+    },
+    {
+        "file": "game:itemtypes/resource/quartz/rosequartz",
+        "op": "add",
+        "path": "/class",
+        "value": "ItemPilableQuartz"
+    },
+    {
+        "file": "game:itemtypes/resource/quartz/smokyquartz",
+        "op": "add",
+        "path": "/class",
+        "value": "ItemPilableQuartz"
+    },
+    {
+        "file": "game:itemtypes/resource/clay",
+        "op": "replace",
+        "path": "/class",
+        "value": "ItemPilableClay"
+    }
+]
