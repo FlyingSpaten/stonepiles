@@ -11,7 +11,9 @@
         }
     ],
     "textures": {
-        "all": { "base": "block/clay/{type}clay" }
+        "all": {
+            "base": "game:block/clay/{type}clay"
+        }
     },
     "lightAbsorption": 0,
     "sidesolid": { "all": false },

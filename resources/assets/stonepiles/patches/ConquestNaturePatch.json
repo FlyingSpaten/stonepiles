@@ -1,0 +1,51 @@
+[
+    {
+        "file": "blocktypes/stonepile",
+        "op": "replace",
+        "path": "/texturesByType",
+        "value": {
+            "@.*-(|andesite_columnar|basalt_columnar|basalt_columnar_light|calcite_rough|dacite_columnar|rhyolite_columnar|granite_red|schist_blue|schist_green|slate_warped_costal|calcite_rough|dripstone|dripstone_dark|graywacke|limestone_boulders_mossy_light|limestone_mossy|mudstone|sandstone_brown|sandstone_costal_red|sandstone_mossy_red|sandstone_orange|sandstone_red|sandstone_tan)": {
+                "up": { 
+                    "base": "conquestnaturepack:block/topography/rock/{rock}/top/*",
+                    "overlays": ["block/pile-overlay"] 
+                },
+                "down": {
+                    "base": "conquestnaturepack:block/topography/rock/{rock}/top/*",
+                    "overlays": ["block/pile-overlay"] 
+                },
+                "sides": { 
+                    "base": "conquestnaturepack:block/topography/rock/{rock}/sides/*",
+                    "overlays": ["block/pile-overlay"] 
+                }
+            },
+            "@.*-(andesite|granite|phyllite|slate|chert|claystone|conglomerate|sandstone|shale)": {
+                "sides": { 
+                    "base": "game:block/stone/rock/{rock}*",
+                    "overlays": ["block/pile-overlay"] 
+                },
+                "up": { 
+                    "base": "game:block/stone/rock/top/{rock}*",
+                    "overlays": ["block/pile-overlay"] 
+                },
+                "down": { 
+                    "base": "game:block/stone/rock/top/{rock}*",
+                    "overlays": ["block/pile-overlay"] 
+                }
+            },
+            "@.*-(basalt|kimberlite|obsidian|scoria|suevite|tuff|peridotite|greenmarble|redmarble|whitemarble|bauxite|chalk|limestone|halite)": {
+                "all": { 
+                    "base": "game:block/stone/rock/{rock}*",
+                    "overlays": ["block/pile-overlay"] 
+                }
+
+            },
+            "*": {
+                "all": { 
+                    "base": "conquestnaturepack:block/topography/rock/{rock}/*",
+                    "overlays": ["block/pile-overlay"] 
+                }
+            }
+        },
+        "dependsOn": [{ "modid": "conquestnaturepack" }]
+    }
+]

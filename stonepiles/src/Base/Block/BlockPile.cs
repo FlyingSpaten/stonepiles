@@ -121,7 +121,7 @@ namespace nrw.frese.stonepile.basics
         public override Cuboidf[] GetCollisionBoxes(IBlockAccessor blockAccessor, BlockPos pos)
         {
             BlockEntityPile bea = blockAccessor.GetBlockEntity(pos) as BlockEntityPile;
-            if (bea == null) return new Cuboidf[0];
+            if (bea == null) return CollisionBoxesByFillLevel[1];
 
             return CollisionBoxesByFillLevel[bea.Layers()];
         }
@@ -129,7 +129,7 @@ namespace nrw.frese.stonepile.basics
         public override Cuboidf[] GetSelectionBoxes(IBlockAccessor blockAccessor, BlockPos pos)
         {
             BlockEntityPile bea = blockAccessor.GetBlockEntity(pos) as BlockEntityPile;
-            if (bea == null || bea.Layers() <= 0) return new Cuboidf[0];
+            if (bea == null || bea.Layers() <= 0) return CollisionBoxesByFillLevel[1];
 
             return CollisionBoxesByFillLevel[bea.Layers()];
         }

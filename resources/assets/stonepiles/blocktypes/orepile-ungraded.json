@@ -11,7 +11,9 @@
         }
     ],
     "textures": {
-        "all": { "base": "block/orepile/orepile-{ore}*" }
+        "all": { 
+            "base": "game:item/resource/ungraded/{ore}*"
+        }
     },
     "lightAbsorption": 0,
     "sidesolid": { "all": false },

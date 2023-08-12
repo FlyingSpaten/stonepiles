@@ -11,8 +11,13 @@
 			"loadFromProperties": "game:block/rockwithdeposit"
 		}
 	],
-	"textures": {
-		"all": { "base": "block/stonepile-{rock}*" }
+	"texturesByType": {
+		"*": {
+			"all": { 
+				"base": "game:block/stone/rock/{rock}*",
+				"overlays": ["block/pile-overlay"]
+			}
+		}
 	},
 	"lightAbsorption": 0,
 	"sidesolid": { "all": false },

@@ -10,8 +10,17 @@
             "states": [ "amethyst", "clearquartz", "rosequartz", "smokyquartz" ]
         }
     ],
-    "textures": {
-        "all": { "base": "block/orepile/orepile-{type}" }
+    "texturesByType": {
+        "@.*rosequartz.*": {
+            "all": { 
+                "base": "game:item/resource/ungraded/rosyquartz"
+            }
+        },
+        "*":  {
+            "all": { 
+                "base": "game:item/resource/ungraded/{type}"
+            }
+        }
     },
     "lightAbsorption": 0,
     "sidesolid": { "all": false },
