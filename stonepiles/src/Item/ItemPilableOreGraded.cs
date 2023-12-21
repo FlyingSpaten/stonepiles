@@ -4,7 +4,7 @@ using Vintagestory.GameContent;
 
 namespace nrw.frese.stonepile.item
 {
-    public class ItemPilableOre : ItemOre
+    public class ItemPilableOreGraded : ItemOre
     {
         public override bool IsPileable { get{ return true; } }
         protected override AssetLocation PileBlockCode { get {
@@ -12,7 +12,7 @@ namespace nrw.frese.stonepile.item
                 {
                     return new AssetLocation("coalpile");
                 }
-                return new AssetLocation("stonepiles:orepile-ungraded-" + Variant["ore"]);
+                return new AssetLocation("stonepiles:orepile-graded-" + Variant["grade"] + "-" + Variant["ore"] + "-" + Variant["rock"]);
             } }
 
     }

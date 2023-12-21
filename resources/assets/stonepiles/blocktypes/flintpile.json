@@ -1,0 +1,38 @@
+﻿{
+    "code": "flintpile",
+    "class": "BlockFlintPile",
+    "entityClass": "BlockEntityFlintPile",
+    "behaviors": [ { "name": "UnstableFalling" } ],
+    "blockmaterial": "stone",
+    "textures": {
+        "all": {
+            "base": "game:block/stone/flint"
+        }
+    },
+    "lightAbsorption": 0,
+    "sidesolid": { "all": false },
+    "sideopaque": { "all": false },
+    "sounds": {
+        "place": "game:block/stone",
+        "break": "game:block/stone"
+    },
+    "replaceable": 100,
+    "resistance": 2,
+    "collisionbox": {
+        "x1": 0,
+        "y1": 0,
+        "x2": 1,
+        "y2": 0,
+        "z2": 1
+    },
+    "selectionbox": {
+        "x1": 0,
+        "y1": 0,
+        "x2": 1,
+        "y2": 0,
+        "z2": 1
+    },
+    "drops": [],
+    "materialDensity": 600
+
+}

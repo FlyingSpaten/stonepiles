@@ -11,8 +11,14 @@
         "path": "/classByType",
         "value": {
             "*-bituminouscoal": "ItemCoal",
-		    "*": "ItemPilableOre"
+		    "*": "ItemPilableOreUngraded"
         }
+    },
+    {
+        "file": "game:itemtypes/resource/ore-graded",
+        "op": "replace",
+        "path": "/class",
+        "value": "ItemPilableOreGraded"
     },
     {
         "file": "game:itemtypes/resource/quartz/amethyst",
@@ -43,5 +49,11 @@
         "op": "replace",
         "path": "/class",
         "value": "ItemPilableClay"
+    },
+    {
+        "file": "game:itemtypes/resource/flint",
+        "op": "replace",
+        "path": "/class",
+        "value": "ItemPilableFlint"
     }
 ]
