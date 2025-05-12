@@ -9,6 +9,6 @@ namespace nrw.frese.stonepile.blockentity
         public override int MaxStackSize { get { return 16; } }
         public override int DefaultTakeQuantity { get { return 2; } }
         public override int BulkTakeQuantity { get { return 2; } }
-        public override AssetLocation SoundLocation { get { return new AssetLocation("sounds/effect/clayform"); } }
+        public override AssetLocation SoundLocation { get { return new AssetLocation("sounds/block/rock-break-pickaxe"); } }
     }
 }

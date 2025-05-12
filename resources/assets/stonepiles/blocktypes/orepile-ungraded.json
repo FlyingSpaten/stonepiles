@@ -10,9 +10,16 @@
             "loadFromProperties": "game:block/ore-ungraded"
         }
     ],
-    "textures": {
-        "all": { 
-            "base": "game:item/resource/ungraded/{ore}*"
+    "texturesByType": {
+        "*-alum": {
+            "all": { 
+                "base": "game:item/resource/ungraded/quartz"
+            }
+        },
+        "*":  {
+            "all": { 
+                "base": "game:item/resource/ungraded/{ore}*"
+            }
         }
     },
     "lightAbsorption": 0,

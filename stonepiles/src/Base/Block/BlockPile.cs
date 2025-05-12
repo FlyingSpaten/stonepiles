@@ -146,6 +146,21 @@ namespace nrw.frese.stonepile.basics
             return new ItemStack[0];
         }
 
+        public override bool CanAcceptFallOnto(IWorldAccessor world, BlockPos pos, Block fallingBlock, TreeAttribute blockEntityAttributes)
+        {
+            if (fallingBlock is BlockPile)
+            {
+                BlockPile ourBlock = world.BlockAccessor.GetMostSolidBlock(pos) as BlockPile;
+                if (ourBlock != null)
+                {
+                    BlockEntityPile be = world.BlockAccessor.GetBlockEntity(pos) as BlockEntityPile;
+                    return be != null && be.Layers() < 8;
+                }
+            }
+
+            return false;
+        }
+
         public override bool OnFallOnto(IWorldAccessor world, BlockPos pos, Block block, TreeAttribute blockEntityAttributes)
         {
             if (block is BlockPile)

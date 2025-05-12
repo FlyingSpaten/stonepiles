@@ -16,6 +16,7 @@ namespace nrw.frese.stonepile
             api.RegisterBlockClass("BlockQuartzPile", typeof(BlockQuartzPile));
             api.RegisterBlockClass("BlockClayPile", typeof(BlockClayPile));
             api.RegisterBlockClass("BlockFlintPile", typeof(BlockFlintPile));
+            api.RegisterBlockClass("BlockNuggetPile", typeof(BlockNuggetPile));
 
             api.RegisterBlockEntityClass("BlockEntityStonePile", typeof(BlockEntityStonePile));
             api.RegisterBlockEntityClass("BlockEntityOreUngradedPile", typeof(BlockEntityOreUngradedPile));
@@ -23,6 +24,7 @@ namespace nrw.frese.stonepile
             api.RegisterBlockEntityClass("BlockEntityQuartzPile", typeof(BlockEntityQuartzPile));
             api.RegisterBlockEntityClass("BlockEntityClayPile", typeof(BlockEntityClayPile));
             api.RegisterBlockEntityClass("BlockEntityFlintPile", typeof(BlockEntityFlintPile));
+            api.RegisterBlockEntityClass("BlockEntityNuggetPile", typeof(BlockEntityNuggetPile));
 
             api.RegisterItemClass("ItemPilableStone", typeof(ItemPilableStone));
             api.RegisterItemClass("ItemPilableOreUngraded", typeof(ItemPilableOreUngraded));
@@ -30,9 +32,12 @@ namespace nrw.frese.stonepile
             api.RegisterItemClass("ItemPilableQuartz", typeof(ItemPilableQuartz));
             api.RegisterItemClass("ItemPilableClay", typeof(ItemPilableClay));
             api.RegisterItemClass("ItemPilableFlint", typeof(ItemPilableFlint));
+            api.RegisterItemClass("ItemPilableNugget", typeof(ItemPilableNugget));
 
             api.RegisterCollectibleBehaviorClass("BehaviorPilableQuartz", typeof(BehaviorPilableQuartz));
             api.RegisterCollectibleBehaviorClass("BehaviorPilableStone", typeof(BehaviorPilableStone));
+
+            api.Logger.Warning("Stonepiles loaded");
         }
     }
 }

@@ -1,26 +1,23 @@
 ﻿{
-    "code": "claypile",
-    "class": "BlockClayPile",
-    "entityClass": "BlockEntityClayPile",
+    "code": "nuggetpile",
+    "class": "BlockNuggetPile",
+    "entityClass": "BlockEntityNuggetPile",
     "behaviors": [ { "name": "UnstableFalling" } ],
-    "blockmaterial": "soil",
+    "blockmaterial": "stone",
     "variantgroups": [
-        {
-            "code": "type",
-            "states": [ "blue", "fire", "red" ]
-        }
-    ],
+		{ "code": "ore", "loadFromProperties": "block/ore-nugget" }
+	],
     "textures": {
         "all": {
-            "base": "game:block/clay/{type}clay"
+            "base": "game:item/resource/nugget/{ore}"
         }
     },
     "lightAbsorption": 0,
     "sidesolid": { "all": false },
     "sideopaque": { "all": false },
     "sounds": {
-        "place": "game:sounds/effect/clayform",
-        "break": "game:sounds/effect/clayform"
+        "place": "game:block/stone",
+        "break": "game:block/stone"
     },
     "replaceable": 100,
     "resistance": 2,

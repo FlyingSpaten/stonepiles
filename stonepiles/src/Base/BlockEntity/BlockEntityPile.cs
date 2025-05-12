@@ -7,6 +7,7 @@ using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
+using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
 namespace nrw.frese.stonepile.basics
@@ -211,33 +212,34 @@ namespace nrw.frese.stonepile.basics
 
             int maxSteepness = 4;
 
-            BlockPile belowstonepile = Api.World.BlockAccessor.GetBlock(Pos.DownCopy()) as BlockPile;
-            int belowwlayers = belowstonepile == null ? 0 : belowstonepile.GetLayercount(Api.World, Pos.DownCopy());
+            BlockPile belowpile = Api.World.BlockAccessor.GetBlock(Pos.DownCopy()) as BlockPile;
+            int belowwlayers = belowpile == null ? 0 : belowpile.GetLayercount(Api.World, Pos.DownCopy());
 
             foreach (var face in BlockFacing.HORIZONTALS)
             {
                 BlockPos npos = Pos.AddCopy(face);
                 Block nblock = Api.World.BlockAccessor.GetBlock(npos);
-                BlockPile nblockstonepile = Api.World.BlockAccessor.GetBlock(npos) as BlockPile;
-                int nblockstonepilelayers = nblockstonepile == null ? 0 : nblockstonepile.GetLayercount(Api.World, npos);
+                BlockPile nblockpile = Api.World.BlockAccessor.GetBlock(npos) as BlockPile;
 
                 // When should it collapse?
-                // When there layers > 3 and nearby is air or replacable
-                // When nearby is stone and herelayers - neiblayers > 3
-                // When there is stone below us, the neighbour below us is stone, nearby is air or replaceable, and ownstone+belowstone - neibbelowstone > 3
+                int neighbourLayers = nblockpile?.GetLayercount(Api.World, npos) ?? 0;
 
-                int layerdiff = Math.Max(nblock.Replaceable > 6000 ? Math.Max(0, Layers() - maxSteepness) : 0, (nblockstonepile != null ? Layers() - nblockstonepilelayers - maxSteepness : 0));
+                // 1. When our own layer count exceeds maxSteepness
+                int nearbyCollapsibleCount = nblock.Replaceable > 6000 ? Layers() - maxSteepness : 0;
 
-                if (belowwlayers > 0)
+                // 2. Nearby pile is maxsteepness smaller
+                int nearbyToPileCollapsibleCount = nblockpile != null ? (Layers() - neighbourLayers) - maxSteepness : 0;
+
+                // 3. We are a 2 tall pile that is collapsible onto another pile
+                BlockPile nbelowblockpile = Api.World.BlockAccessor.GetBlock(npos.DownCopy()) as BlockPile;
+                int nbelowwlayers = nbelowblockpile == null ? 0 : nbelowblockpile.GetLayercount(Api.World, npos.DownCopy());
+                int selfTallPileCollapsibleCount = belowpile != null && nbelowblockpile != null ? (Layers() + belowwlayers - nbelowwlayers - maxSteepness) : 0;
+
+                int collapsibleLayerCount = GameMath.Max(nearbyCollapsibleCount, nearbyToPileCollapsibleCount, selfTallPileCollapsibleCount);
+
+                if (Api.World.Rand.NextDouble() < collapsibleLayerCount / (float)maxSteepness)
                 {
-                    BlockPile nbelowblockstonepile = Api.World.BlockAccessor.GetBlock(npos.DownCopy()) as BlockPile;
-                    int nbelowwlayers = nbelowblockstonepile == null ? 0 : nbelowblockstonepile.GetLayercount(Api.World, npos.DownCopy());
-                    layerdiff = Math.Max(layerdiff, (nbelowblockstonepile != null ? Layers() + belowwlayers - nbelowwlayers - maxSteepness : 0));
-                }
-
-                if (Api.World.Rand.NextDouble() < layerdiff / (float)maxSteepness)
-                {
-                    if (TryPartialCollapse(npos.UpCopy(), MaxStackSize / 8)) return;
+                    if (TryPartialCollapse(npos.UpCopy(), 2)) return;
                 }
             }
         }
@@ -261,7 +263,7 @@ namespace nrw.frese.stonepile.basics
                     Block upblock = Api.World.BlockAccessor.GetBlock(uppos);
                     if (upblock.Replaceable > 6000)
                     {
-                        ((BlockPile)Block).Construct(otherinv[0], Api.World, uppos, null);
+                        ((IBlockItemPile)Block).Construct(otherinv[0], Api.World, uppos, null);
                     }
                 }
 
@@ -291,21 +293,24 @@ namespace nrw.frese.stonepile.basics
                 Entity entity = world.GetNearestEntity(pos.ToVec3d().Add(0.5, 0.5, 0.5), 1, 1.5f, (e) =>
                 {
                     return e is EntityBlockFalling && ((EntityBlockFalling)e).initialPos.Equals(pos);
-
                 });
 
                 if (entity == null)
                 {
-                    int prevstacksize = inventory[0].StackSize;
+                    ItemStack fallingStack = inventory[0].TakeOut(quantity);
+                    ItemStack remainingStack = inventory[0].Itemstack;
 
-                    inventory[0].Itemstack.StackSize = quantity;
-                    EntityBlockFalling entityblock = new EntityBlockFalling(Block, this, pos, null, 1, true, 0.05f);
-                    entityblock.DoRemoveBlock = false; // We want to split the pile, not remove it 
+                    inventory[0].Itemstack = fallingStack;
+                    EntityBlockFalling entityblock = new EntityBlockFalling(Block, this, pos, null, 0, true, 0.5f);
+                    entityblock.maxSpawnHeightForParticles = 0.3f;
+                    entityblock.DoRemoveBlock = false; // We want to split the pile, not remove it
                     world.SpawnEntity(entityblock);
                     entityblock.ServerPos.Y -= 0.25f;
                     entityblock.Pos.Y -= 0.25f;
 
-                    inventory[0].Itemstack.StackSize = prevstacksize - quantity;
+                    inventory[0].Itemstack = remainingStack;
+                    if (inventory.Empty) Api.World.BlockAccessor.SetBlock(0, Pos);
+
                     return true;
                 }
             }
@@ -335,7 +340,7 @@ namespace nrw.frese.stonepile.basics
 
         private bool IsReplacableBeneath(IWorldAccessor world, BlockPos pos)
         {
-            Block bottomBlock = world.BlockAccessor.GetBlock(pos.X, pos.Y - 1, pos.Z);
+            Block bottomBlock = world.BlockAccessor.GetBlockBelow(pos);
             return (bottomBlock != null && bottomBlock.Replaceable > 6000);
         }
 
