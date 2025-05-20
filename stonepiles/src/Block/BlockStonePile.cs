@@ -9,8 +9,8 @@ using Vintagestory.API.MathTools;
 namespace nrw.frese.stonepile
 { public class BlockStonePile : BlockPile
     {
-        public override string AddStoneLabel { get { return "stonepiles:blockhelp-stonepile-addstone"; } }
-        public override string RemoveStoneLabel { get { return "stonepiles:blockhelp-stonepile-removestone"; } }
+        public override string AddStoneLabel { get { return "stonepiles:blockhelp-stonepile-add"; } }
+        public override string RemoveStoneLabel { get { return "stonepiles:blockhelp-stonepile-remove"; } }
         public override int DefaultAddQuantity { get { return 2; } }
     }
 }

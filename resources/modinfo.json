@@ -4,7 +4,7 @@
     "name": "Stonepile mod",
     "description": "A small mod to add piles of stone to the game",
     "authors": [ "FlyingSpaten" ],
-    "version": "1.1.4",
+    "version": "1.1.5",
     "dependencies": {
         "game": "",
         "survival": ""

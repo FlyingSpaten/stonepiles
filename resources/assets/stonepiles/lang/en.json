@@ -1,15 +1,6 @@
 {
-	"block-stonepile": "Stone pile",
+	"stonepiles:block-stonepile": "Stone pile",
 
-	"blockhelp-stonepile-addstone": "Add stones",
-	"blockhelp-stonepile-removestone": "Remove stones",
-
-	"blockhelp-stonepile-add": "Add",
-	"blockhelp-stonepile-remove": "Remove",
-
-	"blockhelp-quartzpile-addstone": "Add quartz",
-	"blockhelp-quartzpile-removestone": "Remove quartz",
-
-	"blockhelp-claypile-addclay": "Add clay",
-	"blockhelp-claypile-removeclay": "Remove clay"
+	"stonepiles:blockhelp-stonepile-add": "Add",
+	"stonepiles:blockhelp-stonepile-remove": "Remove"
 }
