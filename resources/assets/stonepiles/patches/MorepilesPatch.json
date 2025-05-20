@@ -1,0 +1,9 @@
+[
+    {
+        "file": "morepiles:config/default-item-piles.json",
+        "op": "replace",
+        "path": "/stone-*/Enabled",
+        "value": false,
+        "dependsOn": [{ "modid": "morepiles" }]
+    }
+]
